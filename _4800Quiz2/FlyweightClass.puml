@@ -1,0 +1,50 @@
+@startuml
+'UML Class Diagram for flyweight design pattern
+
+' Classes
+class Character {
+    - character: char
+    - characterProperty: CharacterProperties
+    + Character(charater: char, characterProperty: CharacterProperties)
+    + setCharacter(character: char)
+    + setCharacterProperty(characterProperty: CharacterProperties)
+    + getCharacter(): char
+    + getFont(): String
+    + getColor(): String
+    + getSize(): int
+}
+
+class CharacterProperties {
+    - font: String
+    - color: String
+    - size: int
+    + CharacterProperties(font: String, color: String, size: int)
+    + getFont(): String
+    + getColor(): String
+    + getSize(): int
+}
+
+class CharacterPropertiesFactory {
+    - flyweights: Map<String, CharacterProperties>
+    + CharacterPropertiesFactory()
+    + CharacterPropertiesFactory setAndRetrieveFlyweightCharacterProperties(font: String, color: String, size: int)
+    + sizeOfMap(): int
+}
+
+class Document {
+    - characters: List<Character>
+    - propertiesFactor: CharacterPropertiesFactory
+    + Document()
+    + addCharacter(c: char, font: String, color: string, size: int): void
+    + editCharacterProperties(index: int, font: String, color: String, size: int): void
+    + saveToFile(filename: String): void
+    + loadFromFile(filename String): void
+}
+
+' Relationships
+CharacterPropertiesFactory "1" -- "*" CharacterProperties : creates & manages
+CharacterPropertiesFactory "1" -- "*" Document : uses
+Document "1" -- "*" Character: contains
+Character "1" -- "1" CharacterProperties: has a
+
+@enduml

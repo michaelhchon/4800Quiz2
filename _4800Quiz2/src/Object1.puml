@@ -1,0 +1,110 @@
+@startuml
+'UML Object Diagram for after "HelloWorldCS5800" is entered
+
+object CharacterPropertiesFactory {
+    flyweights:
+        "Arial14Black" -> CharacterProperties1
+        "Arial16Black" -> CharacterProperties2
+        "Verdana12Red" -> CharacterProperties3
+        "Verdana18Blue" -> CharacterProperties4
+}
+
+object Character1 {
+    character = 'H'
+    characterProperty = CharacterProperties2
+}
+
+object Character2 {
+    character = 'e'
+    characterProperty = CharacterProperties1
+}
+
+object Character3 {
+    character = 'l
+    characterProperty = CharacterProperties1
+}
+
+object Character4 {
+    character = 'l'
+    characterProperty = CharacterProperties1
+}
+
+object Character5 {
+    character = 'o'
+    characterProperty = CharacterProperties1
+}
+
+object Character6 {
+    character = 'W'
+    characterProperty = CharacterProperties2
+}
+
+object Character7 {
+    character = 'o'
+    characterProperty = CharacterProperties1
+}
+
+object Character8 {
+    character = 'r'
+    characterProperty = CharacterProperties1
+}
+
+object Character9 {
+    character = 'l'
+    characterProperty = CharacterProperties1
+}
+
+object Character10 {
+    character = 'd'
+    characterProperty = CharacterProperties1
+}
+
+object Character11 {
+    character = 'C'
+    characterProperty = CharacterProperties4
+}
+
+object Character12 {
+    character = 'S'
+    characterProperty = CharacterProperties4
+}
+
+object Character13 {
+    character = '5'
+    characterProperty = CharacterProperties3
+}
+
+object Character14 {
+    character = '8'
+    characterProperty = CharacterProperties3
+}
+
+object Character15 {
+    character = '0'
+    characterProperty = CharacterProperties3
+}
+
+object Character16 {
+    character = '0'
+    characterProperty = CharacterProperties3
+}
+
+CharacterPropertiesFactor -- Character1
+CharacterPropertiesFactor -- Character2
+CharacterPropertiesFactor -- Character3
+CharacterPropertiesFactor -- Character4
+CharacterPropertiesFactor -- Character5
+CharacterPropertiesFactor -- Character6
+CharacterPropertiesFactor -- Character7
+CharacterPropertiesFactor -- Character8
+CharacterPropertiesFactor -- Character9
+CharacterPropertiesFactor -- Character10
+CharacterPropertiesFactor -- Character11
+CharacterPropertiesFactor -- Character12
+CharacterPropertiesFactor -- Character13
+CharacterPropertiesFactor -- Character14
+CharacterPropertiesFactor -- Character15
+CharacterPropertiesFactor -- Character16
+
+@enduml
+
